@@ -1,0 +1,760 @@
+@charset "utf-8";
+/*
+Theme Name: RK_theme_sample
+Author: RK
+Description: シンプルで扱いやすいデザインを目標に作成中
+Tags: two-columns, right-sidebar, custom-colors, custom-logoo, blog
+Version: 0.01
+*/
+
+
+body {
+/*フォントの指定*/
+font-family: 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'Noto Sans Japanese', Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+/*サイト全体のフォントサイズを指定*/
+font-size: 16px;
+/*行間の指定*/
+line-height: 1.7;
+/*サイト全体にかかるmarginをリセット*/
+margin: 0;
+/*サイト全体にかかるpaddingをリセット*/
+padding: 0;
+/*サイトのデフォルトとなる文字の色を指定*/
+color: #333;
+}
+
+/*見出しを全て太字で表示するように指定*/
+h1, h2, h3, h4, h5, h6 {
+font-weight: bold;
+}
+/*画像の最大幅を画面のサイズの最大幅に設定*/
+img {
+max-width: 100%;
+height: auto;
+}
+
+/*ヘッダーの下に境界線を引く*/
+header {
+border-bottom: solid 1px #ddd;
+}
+
+/*フッターの上に境界線を引く*/
+footer {
+border-top: solid 1px #ddd;
+}
+
+
+
+/*確認用に一時記述----------*/
+/*.contents, #sidebar {height: 800px; }*/
+
+/*header{background-color: #888;}
+
+.header-inner{ background-color: #ccc; height: auto;}*/
+
+/*.container {background-color: beige; }*/
+
+/*.contents {background-color: #a5e2ff; }*/
+
+/*#sidebar{background-color: #aefffc; }*/
+/*------------------------*/
+
+
+/*コンテンツのサイズ指定*/
+.header-inner, .container, .footer-inner {
+max-width: 1170px;
+margin-right: auto;
+margin-left: auto;
+
+/*追加*/
+padding: 10px;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+.contents, #sidebar {
+  margin: 20px 0;
+  height: auto;
+}
+
+/*トップページ背景*/
+.backcolor {
+  background-image: url("images/blue_back.jpg");
+}
+
+
+/*ヘッダー画像に最適化*/
+.header-inner {
+  padding: 0;
+}
+
+.site-title {
+  text-align: left;
+}
+
+.site-title h1 {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.site-title h1 img {
+  width: auto;
+}
+
+.site-title a {
+  display: block;
+}
+
+/*スマホ用のメニューボタン*/
+  .header-inner {
+    position: relative;
+  }
+
+  #navbutton {
+    position: absolute;
+    top: 45%;/*変更*/
+    right: 10px;
+    padding: 8px 12px;
+    cursor: pointer;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border: solid 1px #aaa;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+
+  #navbutton:hover {
+    background-color: #ddd;
+  }
+
+  #navbutton:focus {
+    outline: none;
+  }
+
+  #navbutton i {
+    font-size: 2em;
+    color: #333;
+  }
+
+
+/*------サイドバーplusersデザイン------*/
+.sidebar-wrapper {
+margin-bottom: 1.8em;
+padding: 10px;
+}
+
+.sidebar-wrapper h4 {
+font-size: 1.1em;
+margin-top: 0;
+margin-bottom: 10px;
+padding: 7px 10px;
+color: #fff;
+background-color: #464646;
+}
+
+
+/*デフォルトウィジェット*/
+.widget_recent_entries ul, .widget_meta ul, .widget_recent_comments ul, .widget_pages ul, .widget_meta ul, .widget_categories ul, .widget_archive ul, .widget_nav_menu ul {
+padding: 0;
+list-style: none;
+}
+
+.widget_recent_entries li, .widget_meta li, .widget_recent_comments li, .widget_pages li, .widget_meta li, .widget_categories li, .widget_archive li, .widget_nav_menu li {
+position: relative;
+padding: 10px;
+}
+
+.widget_recent_entries li, .widget_nav_menu li {
+padding-left: 25px;
+}
+
+.widget_recent_entries a, .widget_meta a, .widget_recent_comments a, .widget_pages a, .widget_meta a, .widget_categories a, .widget_archive a, .widget_nav_menu a {
+text-decoration: none;
+color: #333;
+}
+
+.widget_recent_entries a:hover, .widget_meta a:hover, .widget_recent_comments a:hover, .widget_pages a:hover, .widget_meta a:hover, .widget_categories a:hover, .widget_archive a:hover, .widget_nav_menu a:hover {
+opacity: .6;
+}
+
+/*カテゴリウィジェット*/
+.widget_categories li {
+display: inline-block;
+margin: 2px;
+padding: 2px 10px;
+white-space: nowrap;
+border-radius: 3px;
+background-color: #777;
+}
+
+.widget_categories li:before {
+font-family: 'Font Awesome 5 Free';
+font-size: .8em;
+font-weight: bold;
+padding-right: 2px;
+content: '\f02b';
+color: #fff;
+}
+
+.widget_categories li a {
+font-size: .8em;
+color: #fff;
+}
+
+/*タグウィジェット*/
+.tagcloud a {
+font-size: .9em !important;
+line-height: 2.5em;
+margin: 2px;
+padding: 2px 10px;
+white-space: nowrap;
+text-decoration: none;
+color: #333;
+border: 1px solid #333;
+border-radius: 3px;
+}
+
+/*新着ウィジェット*/
+.widget_recent_entries li:before {
+font-family: 'Font Awesome 5 Free';
+font-weight: bold;
+position: absolute;
+left: 5px;
+content: '\f303';
+color: #464646;
+}
+
+/*メニューウィジェット*/
+.widget_nav_menu li:before {
+font-family: 'Font Awesome 5 Free';
+font-weight: bold;
+position: absolute;
+left: 5px;
+content: '\f0da';
+color: #464646;
+}
+
+/*カレンダーウィジェット*/
+#wp-calendar {
+width: 100%;
+}
+
+#wp-calendar tbody {
+text-align: center;
+}
+
+
+/*サムネイル付き新着ウィジェットのカスタマイズ*/
+/*  最近の更新記事ウィジェット
+---------------------------------------------------*/
+.widget_modify_update ul{
+    padding: 0;
+    list-style: none;
+}
+.widget_modify_update ul li{
+    position: relative;
+}
+.widget_modify_update ul li a{
+    text-decoration: none;
+    padding: 10px 5px;
+    display: block;
+    color: #23282d;
+}
+figure.eyecatch img {
+    float: left;
+    margin-right: 1.6%;
+    object-fit: cover;
+    width: 128px;
+    height: 80px;
+}
+.widget_modify_update-title {
+    font-size: 13px;
+    margin-left: 130px;
+    line-height: 1.6;
+    font-weight: bold;
+}
+.widget_modify_update .cat-data {
+    position: absolute;
+    top: 11px;
+    left: 6px;
+    background: #3f51b591;
+    color: #fff;
+    padding: 0 2px;
+    font-size: 10px;
+}
+.modify_date {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #808080;
+    font-size: 80%;
+}
+.widget_modify_update li:hover {
+    opacity: .7;
+    transition: .6s;
+}
+.clr {
+    display: block;
+    clear: both;
+}
+.clr::after {
+    height: 0;
+    clear: both;
+    font-size: 0;
+    display: block;
+    content: "";
+}
+
+
+
+/*ヘッダーナビ*/
+#header-nav {
+display: none;
+}
+
+.header-nav {
+padding-left: 10px;
+}
+
+.header-nav ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+.header-nav li a:before {
+content: "\f0da";
+font-family: 'Font Awesome 5 Free';
+color: #555;
+font-size: 0.9em;
+padding-right: 3px;
+}
+
+.header-nav li a {
+display: block;
+padding: 15px 5px;
+color: #000;
+font-weight: bold;
+font-size: 1em;
+text-decoration: none;
+}
+
+.header-nav li a:hover {
+opacity: 0.8;
+}
+
+
+/*------フッター------*/
+footer {
+background-color: #23282d;
+}
+
+/*フッターメニュー*/
+.footer-nav {
+margin-bottom: 20px;
+}
+
+.footer-nav ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+.footer-nav ul:after {
+display: block;
+clear: both;
+content: '';
+}
+
+.footer-nav li {
+float: left;
+width: 50%;
+text-align: center;
+}
+
+.footer-nav li a {
+font-size: .9em;
+display: block;
+padding: 10px 5px;
+text-decoration: none;
+color: #fff;
+}
+
+.footer-nav li a:hover {
+opacity: .6;
+}
+
+
+/*コピーライト*/
+.copyright p {
+font-size: .9em;
+margin: 0;
+text-align: center;
+color: #fff;
+}
+
+
+/*サイドバーデザイン*/
+.sidebar-inner {
+  padding: 10px;
+}
+
+/*インデックスリストのデザイン*/
+.kiji-list {
+  margin: 0 5px 30px 5px;
+  background-color: #fff;
+
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05);
+}
+
+.kiji-list a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+
+  border-radius: 10px;
+}
+
+.kiji-list a:after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+.kiji-list a:hover {
+  background-color: #eee;
+}
+
+/*atuwebライクな見た目*/
+.indeximg {
+  text-align: center;
+}
+
+.kiji-list img {
+  width: 690px;
+  height: 230px;
+  object-fit: cover;
+
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.kiji-list .text {
+  width: auto;
+  padding: 5px 5px 10px 5px;
+  /*margin-left: 250px;*/
+}
+
+.kiji-list h2 {
+  font-size: 1.05em;
+  line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.kiji-date {
+  font-size: .8em;
+  margin-bottom: 8px;
+  color: #666;
+}
+
+.cat-data {
+  font-size: .6em;
+  padding: 3px 5px;
+  text-align: center;
+  white-space: nowrap;
+  color: #fff;
+  border-radius: 3px;
+  background-color: #85acc5;
+}
+
+.kiji-list p {
+  font-size: .8em;
+  margin: 10px 0 0;
+}
+
+/*ページネーションのデザイン*/
+.pagination {
+  margin: 40px 0 30px;
+  text-align: center;
+}
+
+.pagination ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pagination li {
+  display: inline-block;
+  width: auto;
+}
+
+.pagination li a, .pagination li > span {
+  font-size: .9em;
+  display: block;
+  width: 30px;
+  margin: 0 1px;
+  padding: 5px 0;
+  text-decoration: none;
+  color: #000;
+  border: solid 1px #ccc;
+  border-radius: 3px;
+}
+
+.pagination li > span {
+  color: #fff;
+  background-color: #464646;
+}
+
+.pagination li a:hover {
+  color: #fff;
+  background-color: #464646;
+}
+
+.pagination li .dots {
+  width: 15px;
+  padding: 0;
+  color: #000;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+/*カテゴリタイトル*/
+.contents > h1 {
+font-size: 1.5em;
+margin: 0 0 20px;
+}
+
+
+/*記事のデザイン*/
+.kiji {
+  font-size: 1em;
+  margin: 0;
+  padding: 25px 25px;
+  background-color: white;
+}
+
+.kiji-info .cat-data a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.kiji-info .cat-data a:hover {
+  opacity: .8;
+}
+
+.kiji-img {
+  max-width: 640px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+
+/*タグ*/
+
+.kiji-tag {
+  text-align: right;
+}
+
+.kiji-tag ul {
+  list-style: none;
+}
+
+.kiji-tag li {
+  display: inline-block;
+  color: #464646;
+}
+
+.kiji-tag li a {
+  font-size: .8em;
+  margin-right: 7px;
+  padding: 2px 7px;
+  text-decoration: none;
+  color: #464646;
+  border: solid 1px #464646;
+  border-radius: 2px;
+}
+
+.kiji-tag li a:hover {
+  opacity: .8;
+}
+
+.kiji p {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.kiji h1 {
+  font-size: 1.7em;
+  margin: .3em 0;
+}
+
+.kiji h2 {
+  font-size: 1.5em;
+  margin-top: 3em;
+  margin-bottom: 1.5em;
+  padding: .4em 0;
+  border-bottom: solid 5px #464646;
+}
+
+.kiji h3 {
+  font-size: 1.35em;
+  margin-top: 2.5em;
+  margin-bottom: 1.5em;
+  padding: 0 .5em;
+  border-left: solid 5px #777777;
+  background: transparent;
+}
+
+.kiji h4 {
+  font-size: 1.2em;
+  margin: 0 0 .3em;
+}
+
+.kiji h5 {
+  font-size: 1.1em;
+  margin: 0 0 .3em;
+}
+
+
+/*パソコン用のCSS、最後に記述*/
+
+@media (min-width: 768px){
+  /*768px以上：つまり大型タブレットorパソコン、適応させたいCSSを記述*/
+  /*コンテンツとサイドバーを横に並べる*/
+  .container:after {
+    display: block;
+    clear: both;
+    content: '';
+  }
+  .contents {
+    float: left;
+    width: 60%;
+    margin-right: 2%;
+  }
+  #sidebar {
+    float: left;
+    width: 36%;
+  }
+
+  /*ヘッダーメニュー*/
+  #header-nav {
+    display: block!important;
+    border-bottom: 1px solid #ccc;
+  }
+  .header-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding:0 10px;
+    box-sizing: border-box;
+  }
+
+  #navbutton {
+    display: none;
+  }
+
+  /*メニュー新デザイン*/
+  .header-nav ul {
+    display: table;
+    margin: 0 auto;
+    padding: 0;
+    width: 80%;
+    text-align: center;
+  }
+
+  .header-nav ul li {
+    display: table-cell;
+    min-width: 50px;
+    border-right: 1px solid #ccc;
+  }
+
+  .header-nav ul li:first-child{
+    border-left: 1px solid #ccc;
+  }
+
+  .header-nav ul li a{
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    text-decoration: none;
+    color: #4e3b3b;
+  }
+
+  .header-nav ul li a:hover{
+    background-color:#F8E750;
+    border-bottom: 5px solid #00f;
+  }
+
+  .header-nav ul li.current{
+    font-weight: bold;
+  }
+
+  .header-nav ul li.current a{
+    border-bottom: 5px solid #00B0F0;
+    color: #00B0F0;
+  }
+
+  .header-nav li a:before {
+    content: "\f0da";
+    font-family: 'Font Awesome 5 Free';
+    color: #00f;
+    font-size: 1.2em;
+    padding-right: 3px;
+}
+
+  /*フッターメニューのデザイン*/
+  .footer-nav li {
+    width: auto;
+    text-align: left;
+  }
+  .footer-nav li a {
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+  /*コピーライト*/
+  .copyright p {
+    text-align: right;
+  }
+
+}
+
+/*パソコン用ヘッダーのデザイン*/
+.nav-container {
+  background-color: #cae0ef;
+}
+
+
+/*スマホ用デザインCSS*/
+@media (max-width: 599px) {
+  /*とくにスマホでインデックスリストのデザインは変えない
+  .kiji-list a {
+    padding: 10px;
+  }
+  .kiji-list img {
+    width: 100px;
+    height: 80px;
+  }
+  .kiji-list .text {
+    margin-left: 120px;
+  }
+  .kiji-list h2 {
+    font-size: .95em;
+  }
+  .kiji-date {
+    margin-bottom: 0;
+  }
+  .kiji-list p {
+    visibility: hidden;
+    height: 0;
+  }
+  */
+
+  /*カテゴリタイトル*/
+  .contents > h1 {
+  font-size: 1.3em;
+  }
+}
